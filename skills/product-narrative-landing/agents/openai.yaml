@@ -1,0 +1,5 @@
+interface:
+  display_name: "Product Narrative Landing"
+  short_description: "Build clear, trustworthy software landing pages"
+  brand_color: "#2864E4"
+  default_prompt: "Use $product-narrative-landing to structure and build a trustworthy product landing page."
