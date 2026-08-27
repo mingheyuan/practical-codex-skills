@@ -1,5 +1,0 @@
-interface:
-  display_name: "Responsive UI QA"
-  short_description: "Catch responsive layout and interaction regressions"
-  brand_color: "#2864E4"
-  default_prompt: "Use $responsive-ui-qa to validate this UI at desktop and mobile sizes."

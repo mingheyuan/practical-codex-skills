@@ -1,5 +1,0 @@
-interface:
-  display_name: "Frontend Audit"
-  short_description: "Find frontend UX, visual, and responsive risks"
-  brand_color: "#2864E4"
-  default_prompt: "Use $frontend-audit to inspect this frontend and produce an evidence-backed audit."

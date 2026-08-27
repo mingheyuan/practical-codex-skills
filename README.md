@@ -1,44 +1,73 @@
-# Practical Codex Skills
+# 个人自用 Codex Skills
 
-一组面向产品官网与前端工作的实用 Codex skills。它们从 Saymore 官网的页面叙事、产品模拟器、信任表达和响应式表现中提炼，但不绑定 Saymore 的品牌、文案或资源。
+这个仓库用于存取、备份和持续整理我个人在 Codex 中使用的 skills。它不是某个产品的源代码，也不追求覆盖所有场景；每个 skill 都应该是一套可以反复复用的工作方法。
 
-## Included skills
+## 当前内容
 
-| Skill | Use it for |
+目前仓库包含一个统一的产品前端展示 skill：
+
+| Skill | 用途 |
 | --- | --- |
-| `$product-narrative-landing` | 构建有产品演示、证据和信任层的桌面工具 / AI / 隐私产品官网 |
-| `$frontend-audit` | 审查现有网站的架构、视觉系统、交互、无障碍和响应式风险 |
-| `$responsive-ui-qa` | 在桌面与移动尺寸验证布局、交互和可访问性回归 |
-| `$product-copy-guardrails` | 审核软件产品文案、量化宣传、数据边界和生命周期状态 |
+| `$product-frontend-showcase` | 设计、实现、审查和验证有清晰产品叙事的官网或产品展示型前端 |
 
-## Install
+刚刚从 Saymore 页面提炼出的内容已经融合到这个 skill 中，包含：
 
-把 `skills/` 下需要的 skill 文件夹复制到 Codex 的 skills 目录，例如：
+- 产品官网的信息架构、页面节奏和产品形态 Hero；
+- 视觉 token、网格、章节、对比和信任/数据流表达；
+- 前端审查、交互状态、无障碍和响应式 QA；
+- 基于证据的产品文案、数据边界和功能生命周期标记。
+
+它借鉴的是可复用的方法，不复制 Saymore 的品牌、文案、资源或具体页面。
+
+## 安装
+
+在仓库根目录执行：
 
 ```bash
-cp -R skills/product-narrative-landing ~/.codex/skills/
+cp -R skills/product-frontend-showcase ~/.codex/skills/
 ```
 
-也可以只在任务中显式引用 `$skill-name`。每个 skill 都有独立的 `SKILL.md`，并按需加载自己的 references。
+安装后可以在任务中使用：
 
-## Design principles
+```text
+$product-frontend-showcase 帮我把这个产品官网整理成清晰的产品展示页
+```
 
-- 先确认产品事实，再写营销表达。
-- 一个章节只承载一个清晰主张。
-- 让产品演示帮助理解，不让动画遮蔽内容。
-- 把数据流、限制和未完成状态讲清楚。
-- 用证据区分“观察到的事实”和“推断”。
+也可以用于审查已有页面或做多尺寸验证：
 
-## Repository structure
+```text
+$product-frontend-showcase 审查这个前端的叙事、交互、响应式和文案风险
+```
+
+## 目录结构
 
 ```text
 skills/
-├── product-narrative-landing/
-├── frontend-audit/
-├── responsive-ui-qa/
-└── product-copy-guardrails/
+└── product-frontend-showcase/
+    ├── SKILL.md
+    ├── agents/openai.yaml
+    └── references/
+        ├── design-system.md
+        ├── audit-checklist.md
+        ├── viewport-matrix.md
+        └── claim-matrix.md
+scripts/
+└── validate_all.py
 ```
 
-## Contributing
+references 按任务需要加载：视觉实现看 `design-system.md`，前端审查看 `audit-checklist.md`，响应式验证看 `viewport-matrix.md`，产品文案或技术宣传看 `claim-matrix.md`。
 
-新增 skill 前，确保它有清晰的触发边界、一个短而具体的 `SKILL.md`，以及确实能改变执行质量的 references 或 scripts。运行仓库根目录的校验脚本后再提交。
+## 维护原则
+
+- 先确认产品事实，再写营销表达。
+- 一个章节只承载一个清晰主张，并给出相应证据。
+- 让产品演示帮助理解，不让动画遮蔽内容。
+- 把数据流、限制和未完成状态讲清楚。
+- 区分观察到的事实、推断和待验证信息。
+- 新增 skill 时保持目录独立、触发边界清晰，并在提交前运行校验脚本。
+
+## 校验
+
+```bash
+python3 scripts/validate_all.py
+```

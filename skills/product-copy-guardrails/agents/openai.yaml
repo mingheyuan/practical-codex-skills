@@ -1,5 +1,0 @@
-interface:
-  display_name: "Product Copy Guardrails"
-  short_description: "Keep software product claims accurate and clear"
-  brand_color: "#2864E4"
-  default_prompt: "Use $product-copy-guardrails to review this product copy for unsupported or ambiguous claims."

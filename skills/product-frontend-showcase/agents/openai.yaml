@@ -1,0 +1,5 @@
+interface:
+  display_name: "产品前端展示 Skill"
+  short_description: "构建可信、易懂、可验证的产品展示前端"
+  brand_color: "#2864E4"
+  default_prompt: "Use $product-frontend-showcase to design or audit a clear, trustworthy product showcase frontend."
