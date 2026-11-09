@@ -1,0 +1,4 @@
+interface:
+  display_name: "前端导航流畅度"
+  short_description: "优化应用导航、缓存复用与状态保留动效，并以浏览器证据验收"
+  default_prompt: "Use $frontend-navigation-fluidity to diagnose navigation lag and improve switching speed and motion while preserving routing and form state."
